@@ -219,8 +219,10 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
         workArea.remove(this);
         Component[] componentArray = workArea.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        ManageProductCatalogJPanel manageProductCatalogJPanel = (ManageProductCatalogJPanel) component;
-        manageProductCatalogJPanel.refreshTable();
+        if(component instanceof ManageProductCatalogJPanel){
+           ManageProductCatalogJPanel manageProductCatalogJPanel = (ManageProductCatalogJPanel) component;
+           manageProductCatalogJPanel.refreshTable();
+        }
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.previous(workArea);
        
